@@ -1,9 +1,21 @@
 <div>
   <div class="book-details-container">
     <h1>{{this.book.title}}</h1>
-    <img width="250px" height="350px" src="{{this.book.image}}" alt="{{this.book.title}}">
+    <img
+      width="250px"
+      height="350px"
+      src="{{this.book.image}}"
+      alt="{{this.book.title}}"
+    />
     <h3>Author: {{this.book.author}}</h3>
     <p>{{this.book.description}}</p>
-    <a href="/books/{{this.book.id}}/edit">Update</a>
+    <div class="btn-container">
+      <a href="/books/{{this.book.id}}/edit">Update</a>
+      <form action="/books/{{this.book.id}}/delete" method="post">
+        <button class="btn delete-btn">
+          <a>Delete</a>
+        </button>
+      </form>
+    </div>
   </div>
 </div>

@@ -84,4 +84,15 @@ router.post("/:bookId/edit", async (req, res, next) => {
   }
 });
 
+//POST "book/:bookId/delete"
+router.post("/:bookId/delete", async (req, res, next) => {
+    try {
+        const bookId = req.params.bookId;
+        const book = await Book.findByIdAndDelete(bookId)
+        res.redirect("/books");
+    } catch (err) {
+        next(err)
+    }
+})
+
 module.exports = router;

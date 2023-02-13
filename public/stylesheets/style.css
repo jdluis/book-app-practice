@@ -45,6 +45,28 @@ h1 { font-size: 5em; }
   }
 }
 
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn {
+  border: none;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  font-size: 1rem;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+
 /*BOOKS*/
 
 .books-container {
