@@ -1,0 +1,21 @@
+<div>
+  <h1>Books</h1>
+      <table class="book-container">
+        <thead>
+          <tr class="titles-info">
+            <th>Title</th>
+            <th>Author</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each books}}
+          <tr> 
+            <td>{{this.title}} </td>
+            <td>{{this.author}}</td>
+            <td> <a href="/books/{{this.id}}/details">Check Book</a></td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+</div>
