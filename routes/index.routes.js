@@ -11,5 +11,4 @@ router.get("/", (req, res, next) => {
 const bookRoutes = require("./book.routes.js")
 router.use("/books", bookRoutes);
 
-//EXPORT
 module.exports = router;
