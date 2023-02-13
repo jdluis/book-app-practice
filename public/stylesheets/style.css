@@ -98,3 +98,28 @@ th {
 .book-details-container {
   max-width: 600px;
 }
+
+/*ADD BOOK VIEW*/
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #3b3b3b5a;
+  border-radius: 20px;
+  box-shadow: 10px 5px 10px black;
+}
+
+.form-container button {
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.form-container button:hover {
+  cursor: pointer;
+  opacity: .8;
+}

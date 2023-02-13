@@ -1,0 +1,12 @@
+<div>
+    <h1>Edit {{this.book.title}}</h1>
+    <form action="/books/{{this.book.id}}/edit" class="form-container" method="post">
+        <input value="{{this.book.title}}" name="title" type="text" placeholder="Title">
+        <input value="{{this.book.author}}"  name="author" type="text" placeholder="Author">
+        <input value="{{this.book.image}}"  name="image"  type="text" placeholder="Upload book cover ">
+        <textarea name="description" placeholder="Put the description" cols="30" rows="10">
+        {{this.book.description}}
+        </textarea>
+        <button type="submit">Add Book</button>
+    </form>
+</div>
