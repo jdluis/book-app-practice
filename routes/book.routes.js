@@ -3,13 +3,15 @@ const router = express.Router();
 
 /*Model*/
 const Book = require("../models/Book.model.js");
+const Author = require("../models/Author.model.js");
 
 /* GET /books page */
 router.get("/", async (req, res, next) => {
   try {
-    const data = await Book.find();
+    const books = await Book.find().populate('author')
+
     res.render("book/list.hbs", {
-      books: data,
+      books: books,
     });
   } catch (err) {
     next(err);
@@ -19,9 +21,9 @@ router.get("/", async (req, res, next) => {
 /* GET /books details */
 router.get("/:bookId/details", async (req, res, next) => {
   try {
-    const data = await Book.find({ _id: req.params.bookId });
+    const book = await Book.find({ _id: req.params.bookId }).populate('author')
     res.render("book/details.hbs", {
-      book: data[0],
+      book: book[0],
     });
   } catch (err) {
     next(err);
@@ -29,8 +31,19 @@ router.get("/:bookId/details", async (req, res, next) => {
 });
 
 /* GET "/books/add" */
-router.get("/add", (req, res, next) => {
-  res.render("book/add.hbs");
+router.get("/add", async (req, res, next) => {
+
+  try {
+
+    const data = await Author.find()
+    //busca los autores de la base de datso y los pasa al cliente
+    res.render("book/add.hbs", {
+      authors: data
+    });
+
+  } catch (err) {
+    next(err)
+  }
 });
 
 /* POST "/books/add-new-book" o "/books/add" */

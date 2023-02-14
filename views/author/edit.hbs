@@ -1,0 +1,30 @@
+<div>
+  <h1>Edit {{this.author.name}}</h1>
+  <form
+    action="/author/{{this.author.id}}/edit"
+    class="form-container"
+    method="post"
+  >
+  <label for="name">Name</label>
+    <input
+      value="{{this.author.name}}"
+      name="name"
+      type="text"
+      placeholder="Name"
+    />
+    <label for="name">Country</label>
+    <input
+      value="{{this.author.country}}"
+      name="country"
+      type="text"
+      placeholder="Country"
+    />
+    <label for="name">Year of Born</label>
+    <input
+      value="{{this.author.yearBorn}}"
+      name="yearBorn"
+      type="number"
+    />
+    <button type="submit">Update author</button>
+  </form>
+</div>

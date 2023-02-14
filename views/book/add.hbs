@@ -3,7 +3,13 @@
 
     <form action="/books/add" class="form-container" method="post">
         <input name="title" type="text" placeholder="Title">
-        <input name="author" type="text" placeholder="Author">
+        {{!-- <input name="author" type="text" placeholder="Author"> --}}
+        <select name="" id="">
+            {{#each authors}}
+                <option value="{{this.name}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+       {{!--  Acceso a todos los autores de la db --}}
         <input name="image"  type="text" placeholder="Upload book cover ">
         <textarea name="description" placeholder="Put the description" name="" id="" cols="30" rows="10"></textarea>
         <button type="submit">Add Book</button>

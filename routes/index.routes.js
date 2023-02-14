@@ -9,6 +9,8 @@ router.get("/", (req, res, next) => {
 /* Books Routes */
 
 const bookRoutes = require("./book.routes.js")
+const authorRoutes = require("./author.routes.js")
 router.use("/books", bookRoutes);
+router.use("/author", authorRoutes);
 
 module.exports = router;
